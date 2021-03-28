@@ -13,20 +13,11 @@ var contains
         cy.get('.mat-toolbar > .mat-focus-indicator > .mat-button-wrapper').click();
         timeout: 3000;
     it("Authenticate with Microsoft credentials", function(){
-        /*cy.get('.ng-star-inserted > .mat-focus-indicator > .mat-button-wrapper').first().click();
-        //timeout: 4000;
-        cy.get('mat-focus-indicator mat-raised-button mat-button-base').click();
+        //Call file related to non-auth login authentication microsoft
+        cy.get(WebAuthentication);
+        cy.get("auth.js");
         timeout: 5000;
-        //Cypress.Commands.add("Login",()=>{ //custom command for authenticate
-        //cy.request({
-            method: "POST", //Make a request with the previous method
-            url: `https://login.microsoftonline.com/${Cypress.config("t7a94cae1-8140-4699-b980-c359c67828a7")}/oauth2/token`,
-            form: true, //On previous line add the tenant id from AzureAD
-            body: {
-                grant_type: "client_credentials",
-                client_id: Cypress.config("cfc2879bd-db1e-4072-83c9-a95fe61223d3"), //IdClient on AzureActiveDirectory
-                client_secret: Cypress.config("7ac59ed3-74a0-4c0a-9e96-65b3a9d1144c"), //AD Firebase certificates and secrets
-            },   */
+        
         }).then(response => {
             var ADALtoken = response.body.access_token; //Variable for the authentication access
             var expiresOn = response.body.expires_on;  //Variable for the expiration access

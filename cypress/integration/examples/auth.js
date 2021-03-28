@@ -8,8 +8,8 @@ var {
          authority,
          clientId,
          clientSecret,
-          password,
-          username,
+         password,
+         username,
 }=  authsettings;
 var environment = "login.windows.net"
 var injectTokens = (tokenresponse) => {
@@ -30,5 +30,6 @@ export var login = () => {
         },      
     }).then((response) => {
         injectTokens(response.body)
+        window.localStorage.setItem('auth0Cypress', JSON.stringify(item))//local storage authenticated users details
     }).reload();
     }

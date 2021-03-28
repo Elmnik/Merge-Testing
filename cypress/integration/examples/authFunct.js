@@ -37,8 +37,11 @@ exports.getAadToken = async function getAadToken(userObject){
                 await popUp.click('input[type=submit]');
             }
 
-        }
+            //Back to App
+            await page.waitfor(5000);
+            page=await browser.newPage();
+            await page.goto(`${root}/<page in your app>`);
 
-    
-    })
-}
+
+        })
+     })
