@@ -1,5 +1,4 @@
 const puppeteer = require('puppeteer'); //declaration for the puppeteer function method
-
 exports.getAadToken = async function getAadToken(userObject){
     const {email, password, root} =userObject;
     const creds = await puppeteer
