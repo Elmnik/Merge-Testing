@@ -42,6 +42,21 @@ exports.getAadToken = async function getAadToken(userObject){
             page=await browser.newPage();
             await page.goto(`${root}/<page in your app>`);
 
+            await page.waitForSelector('<selector in that page>', {visible: true});
 
-        })
-     })
+        const localstorageData = await page.evaluate(() => {
+            const {accesstoken, userData } = localStorage;
+            return {accesstoken, userData};
+
+        });
+
+        browser.close();
+        return localStorageData;
+       }catch (error){
+            console.error(error);
+            browser.close();
+            return 0;
+        }       
+        });
+    return creds;
+     };
