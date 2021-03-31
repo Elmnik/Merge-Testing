@@ -1,5 +1,6 @@
 //New Import Class on Cypress
 //Declaration of the First Container
+/// <reference types="Cypress"/>
 var contains 
     describe('Get to the Main Page Action', function(){ //Description of Test Case
         beforeEach (function (){ //Cycle to repetitive actions
