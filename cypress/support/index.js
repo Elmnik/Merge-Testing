@@ -18,3 +18,8 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+Cypress.Server.defaults({ //Logic Statement to avoid the execution in the testCases of the xhr commands.
+  whitelist: (xhr) => {
+    return true;
+  }
+})

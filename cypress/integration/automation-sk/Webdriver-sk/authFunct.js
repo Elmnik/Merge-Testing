@@ -43,14 +43,14 @@ exports.getAadToken = async function getAadToken(userObject){
 
             await page.waitForSelector('<selector in that page>', {visible: true});
 
-        const localstorageData = await page.evaluate(() => {
+        const localstorageData = await page.evaluate(() => { //Use authentication for localstorage session
             const {accesstoken, userData } = localStorage;
             return {accesstoken, userData};
 
         });
 
         browser.close();
-        return localStorageData;
+        return localStorageData; //localstorage from WebBrowser
        }catch (error){
             console.error(error);
             browser.close();
